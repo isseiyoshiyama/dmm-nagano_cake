@@ -1,8 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :admins, controllers: {
-    sessions:      'admins/sessions',
-    passwords:     'admins/passwords',
-    registrations: 'admins/registrations'
+  
+  scope module: :public do
+    get "/customers/my_page" => "customers#show"
+    get "/customers/edit" => "customers#edit"
+    patch "/customers" => "customers#update"
+    get "/customers/unsubscribe" => "customers#unsubscribe"
+    patch "/customers/withdraw" => "customers#withdraw"
+  end
+
+
+
+  devise_for :admin, controllers: {
+    sessions:      'admin/sessions',
+    passwords:     'admin/passwords',
+    registrations: 'admin/registrations'
   }
 
   devise_for :customers, controllers: {
