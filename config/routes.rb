@@ -21,10 +21,9 @@ Rails.application.routes.draw do
     post "/orders" => "orders#create"
     get "/orders" => "orders#index"
     get "/orders/:id" => "orders#show"
-    
+
     resources :addresses, only:[:index, :edit, :create, :update, :destroy]
-    
-    
+
   end
 
 
@@ -48,5 +47,7 @@ Rails.application.routes.draw do
 
   get "/admin" => "admin/homes#top"
 
-
+  namespace :admin do
+    resources :items, only:[:index, :new, :create, :show, :edit, :update]
+  end
 end
