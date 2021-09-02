@@ -54,4 +54,5 @@ Rails.application.routes.draw do
     resources :orders, only:[:show, :update]
     resources :order_items, only:[:update]
   end
+  
 end
