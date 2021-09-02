@@ -49,5 +49,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :items, only:[:index, :new, :create, :show, :edit, :update]
+    resources :genres, only:[:index, :create, :edit, :update]
   end
 end
