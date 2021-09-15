@@ -1,1 +1,46 @@
 <h1>admin顧客詳細画面</h1>
+
+<div class="col-md-8 mx-auto">
+  <div class ="row mb-3">
+      <h4 class="text-center bg-light"><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h4>
+  </div>
+
+  <div class="row">
+
+
+    <div class="col-md-5">
+      <table class ="table table-borderless">
+          <tr>
+            <th>会員ID</th><td><%= @customer.id %></td>
+          </tr>
+          <tr>
+            <th>氏名</th></th><td><%= @customer.last_name %>　<%= @customer.first_name %></td>
+          </tr>
+          <tr>
+            <th>フリガナ</th><td><%= @customer.last_name_kana %>　<%= @customer.first_name_kana %></td>
+          </tr>
+          <tr>
+            <th>郵便番号</th><td><%= @customer.postal_code %></td>
+          </tr>
+          <tr>
+            <th>住所</th><td><%= @customer.address %></td>
+          </tr>
+          <tr>
+            <th>電話番号</th><td><%= @customer.telephone_number %></td>
+          </tr>
+          <tr>
+            <th>メールアドレス</th><td><%= @customer.email %></td>
+          </tr>
+          <tr>
+            <th>会員ステータス</th><td><%= @customer.is_active %></td>
+          </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="text-center">
+    <%= link_to "編集する", edit_admin_customer_path(@customer), class: 'btn btn-success btn-lg' %>
+  </div>
+
+</div>
+
