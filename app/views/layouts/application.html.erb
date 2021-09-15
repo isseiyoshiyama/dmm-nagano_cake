@@ -23,8 +23,8 @@
             <ul class="navbar-nav ml-auto">
               <% if customer_signed_in? %>
                 <!--ここから以下のログアウト以外は後ほど見直す必要あり-->
-                <li class="nav-item"><!--マイページへのルーティング記載 -->
-                  <%= link_to "マイページ", about_path, class: 'nav-link' %>
+                <li class="nav-item"><!--マイページへのルーティング記載DONE -->
+                  <%= link_to "マイページ", customers_my_page_path(current_customer.id), class: 'nav-link' %>
                 </li>
                 <li class="nav-item"><!--商品一覧へのルーティング記載 -->
                   <%= link_to "商品一覧", about_path, class: 'nav-link' %>
