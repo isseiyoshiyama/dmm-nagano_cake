@@ -30,11 +30,12 @@
             <th>メールアドレス</th><td><%= f.text_field :email %></td>
           </tr>
 
+
       </table>
 
-      <div class="text-center">
-        <%= f.submit '編集内容を保存', class: 'btn btn-success btn-lg' %>
-
+      <div class="">
+        <%= f.submit '編集内容を保存', class: 'btn btn-success btn-md' %>
+        <%= link_to "退会する", customers_unsubscribe_path, class: 'btn btn-danger btn-md' %>
       </div>
 
     <% end %>
