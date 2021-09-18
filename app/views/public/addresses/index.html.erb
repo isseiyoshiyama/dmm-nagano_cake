@@ -1,1 +1,58 @@
 <h1>配送先登録/一覧画面</h1>
+
+<div class="col-md-8 mx-auto">
+    <div class ="row mb-3">
+          <h4 class="text-center bg-light">配送先登録 / 一覧</h4>
+    </div>
+
+    <%= form_with model: @address, local:true do |f| %>
+
+      <table class ="table table-borderless">
+          <tr>
+            <th>郵便番号(ハイフンなし)</th><td><%= f.text_field :postal_code %></td>
+          </tr>
+          <tr>
+            <th>住所</th><td><%= f.text_field :address %></td>
+          </tr>
+          <tr>
+            <th>宛名</th><td><%= f.text_field :name %></td>
+          </tr>
+
+      </table>
+
+      <div class="">
+        <%= f.submit '新規登録', class: 'btn btn-success btn-md' %>
+      </div>
+
+    <% end %>
+
+
+  <table class="table">
+      <thead>
+        <tr>
+          <th>郵便番号</th>
+          <th>住所</th>
+          <th>宛名</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% @addresses.each do |address| %>
+        <tr>
+          <td><%= address.postal_code %></td>
+          <td><%= address.address %></td>
+          <td><%= address.name %></td>
+          <td>
+            <%= link_to "編集する", edit_address_path(address), class: 'btn btn-success btn-sm' %>
+            <%= link_to "削除する", address_path(address), method: :delete, "data-confirm" => "本当に削除しますか？", class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+  </table>
+
+
+
+
+  </div>

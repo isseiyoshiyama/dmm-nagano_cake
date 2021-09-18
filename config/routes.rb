@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     get "/orders" => "orders#index"
     get "/orders/:id" => "orders#show"
 
-    resources :addresses, only:[:index, :edit, :create, :update, :destroy]
+    resources :addresses, only:[:index, :new, :edit, :create, :update, :destroy]
 
   end
 
