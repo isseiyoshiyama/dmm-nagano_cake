@@ -1,6 +1,9 @@
 class Public::AddressesController < ApplicationController
   def index
-    @addresses = Address.all
+    @customer = current_customer
+    @addresses = @customer.addresses
+    #@__.モデル名でインスタンス変数に紐づいているモデルだけ取れる
+    #rails2-5章のupdateアクションコントローラ
     @address = Address.new
   end
 
