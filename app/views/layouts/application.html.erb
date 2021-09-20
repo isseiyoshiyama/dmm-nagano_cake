@@ -26,13 +26,13 @@
                 <li class="nav-item"><!--マイページへのルーティング記載DONE -->
                   <%= link_to "マイページ", customers_my_page_path(current_customer.id), class: 'nav-link' %>
                 </li>
-                <li class="nav-item"><!--商品一覧へのルーティング記載 -->
-                  <%= link_to "商品一覧", about_path, class: 'nav-link' %>
+                <li class="nav-item"><!--商品一覧へのルーティング記載DONE -->
+                  <%= link_to "商品一覧", items_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item"><!--カートへのルーティング記載 -->
-                  <%= link_to "カート", about_path, class: 'nav-link' %>
+                <li class="nav-item"><!--カートへのルーティング記載DONE -->
+                  <%= link_to "カート", cart_items_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item"><!--ログアウトへのルーティング記載 -->
+                <li class="nav-item"><!--ログアウトへのルーティング記載DONE -->
                   <%= link_to "logout", destroy_customer_session_path, method: :delete, class: 'nav-link' %>
                 </li>
 
@@ -47,7 +47,7 @@
                 <li class="nav-item"><!--カートへのルーティング記載 -->
                   <%= link_to "注文履歴一覧", about_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item"><!--ログアウトへのルーティング記載 -->
+                <li class="nav-item"><!--ログアウトへのルーティング記載DONE -->
                   <%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class: 'nav-link' %>
                 </li>
 
@@ -55,8 +55,8 @@
                 <li class="nav-item"><!-- Aboutへのルーティング -->
                   <%= link_to "About", about_path, class: 'nav-link' %>
                 </li>
-                <li class="nav-item"><!-- 商品一覧へのルーティング -->
-                  <%= link_to "商品一覧", about_path, class: 'nav-link' %>
+                <li class="nav-item"><!-- 商品一覧へのルーティング validationの設定する必要あり -->
+                  <%= link_to "商品一覧", items_path, class: 'nav-link' %>
                 </li>
                 <li class="nav-item"><!-- 新規登録へのルーティング -->
                   <%= link_to "新規登録", new_customer_registration_path, class: 'nav-link' %>
