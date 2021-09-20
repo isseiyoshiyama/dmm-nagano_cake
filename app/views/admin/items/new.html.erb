@@ -3,7 +3,6 @@
           <h4 class="text-center bg-light">商品新規登録</h4>
     </div>
 
-  <div class="text-center">
     <%= form_with model: @item, url:admin_items_path, local:true do |f| %>
 
     <table class ="table table-borderless center-block">
@@ -22,11 +21,11 @@
       <tr>
         <th class="">販売ステータス</th>
         <td class="">
-          <%= f.label :is_active, '販売中', value: 1 %>
           <%= f.radio_button :is_active, :true, checked: true %>
-
-          <%= f.label :is_active, '販売停止中', value: 0 %>
+          <%= f.label :is_active, '販売中', value: 1 %>
+          
           <%= f.radio_button :is_active, :false %>
+          <%= f.label :is_active, '販売停止中', value: 0 %>
         </td>
       </tr>
     </table>
@@ -36,8 +35,5 @@
       </div>
 
     <% end %>
-
-  </div>
-
 
 </div>
