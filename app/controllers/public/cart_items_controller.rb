@@ -8,13 +8,14 @@ class Public::CartItemsController < ApplicationController
   def destroy
   end
 
-  def destroy_all
+  def destroyall
   end
 
   def create
-    @cart_item = CartItem.new(cart_item_params)
-    @cart_item.customer_id = current_customer.id
-    @cart_item.save
+    @cartitem = CartItem.new(cart_item_params)
+    @cartitem.customer_id = current_customer.id
+    @cartitem.save
+    redirect_to cart_items_path
   end
 
   private
