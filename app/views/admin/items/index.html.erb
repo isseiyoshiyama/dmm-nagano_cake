@@ -1,5 +1,5 @@
 <div class="col-md-8 mx-auto">
-  <div class ="row justify-content-between mb-3">
+  <div class ="row justify-content-between mb-4">
     <div class="col-md-3">
       <h4 class="text-center bg-light">商品一覧</h4>
     </div>
@@ -11,21 +11,21 @@
   </div>
 
 
-  <table class ="table">
-    <thead>
-      <tr　class="thead-light">
-        <th style="width: 15%">商品ID</th>
+  <table class ="table border-bottom">
+    <thead class="thead-light ">
+      <tr　class="">
+        <th style="width: 15% ">商品ID</th>
         <th style="width: 45%">商品名</th>
         <th style="width: 20%">税抜価格</th>
         <th style="width: 20%">ステータス</th>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody >
       <% @items.each do |item| %>
-      <tr>
+      <tr >
         <td><%= item.id %></td>
-        <td>
+        <td class="">
           <%= link_to admin_item_path(item) do %>
               <%= item.name %>
           <% end %>
