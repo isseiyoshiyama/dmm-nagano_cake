@@ -1,14 +1,9 @@
-<h1>admin顧客詳細画面</h1>
-
 <div class="col-md-8 mx-auto">
   <div class ="row mb-3">
       <h4 class="text-center bg-light"><%= @customer.last_name %><%= @customer.first_name %>さんの会員詳細</h4>
   </div>
 
-  <div class="row">
 
-
-    <div class="col-md-5">
       <table class ="table table-borderless">
           <tr>
             <th>会員ID</th><td><%= @customer.id %></td>
@@ -34,13 +29,14 @@
           <tr>
             <th>会員ステータス</th><td><%= @customer.is_active %></td>
           </tr>
+
+          <tr>
+            <th></th>
+            <td><%= link_to "編集する", edit_admin_customer_path(@customer), class: 'btn btn-success btn-md mr-5' %> <%= link_to "注文履歴一覧を見る", about_path, class: 'btn btn-primary btn-md' %></td>
+            
+          </tr>
       </table>
+
     </div>
-  </div>
 
-  <div class="text-center">
-    <%= link_to "編集する", edit_admin_customer_path(@customer), class: 'btn btn-success btn-lg' %>
-  </div>
-
-</div>
 
