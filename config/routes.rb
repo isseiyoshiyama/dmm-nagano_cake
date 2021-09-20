@@ -16,7 +16,7 @@ Rails.application.routes.draw do
     
     post "/cart_items" => "cart_items#create", as: 'cart_add'
 
-    get "/orders/new" => "orders#new"
+    get "/orders/new" => "orders#new", as: 'orders_new'
     post "/orders/confirm" => "orders#confirm"
     get "/orders/complete" => "orders#complete"
     post "/orders" => "orders#create"
