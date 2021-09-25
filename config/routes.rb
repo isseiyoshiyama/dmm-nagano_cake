@@ -18,6 +18,9 @@ Rails.application.routes.draw do
 
     get "/orders/new" => "orders#new", as: 'orders_new'
     post "/orders/confirm" => "orders#confirm"
+    #追加したところ
+    get "/orders/confirm" => "orders#confirm"
+    
     get "/orders/complete" => "orders#complete"
     post "/orders" => "orders#create"
     get "/orders" => "orders#index"
