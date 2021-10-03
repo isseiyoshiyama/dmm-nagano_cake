@@ -34,7 +34,7 @@ class Public::OrdersController < ApplicationController
   end
 
   def create
-    cart_items = current_customer.cart_items.all
+    cart_items = current_customer.cart_items
     @order = current_customer.orders.new(order_params)
 
     if @order.save
@@ -44,13 +44,17 @@ class Public::OrdersController < ApplicationController
         order_item.order_id = @order.id
         order_item.amount = cart.amount
         order_item.price = cart.item.price
+        order_item.save
       end
     end
     redirect_to orders_complete_path
+    cart_items.destroy_all
 
   end
 
   def index
+    @customer = current_customer
+    @orders = @customer.orders.all
   end
 
   def show
@@ -58,6 +62,6 @@ class Public::OrdersController < ApplicationController
 
   private
   def order_params
-    params.require(:order).permit(:payment_method, :postal_code, :address, :name)
+    params.require(:order).permit(:payment_method, :postal_code, :address, :name, :total_fee)
   end
 end

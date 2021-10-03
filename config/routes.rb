@@ -24,7 +24,7 @@ Rails.application.routes.draw do
     get "/orders/complete" => "orders#complete"
     post "/orders" => "orders#create"
     get "/orders" => "orders#index"
-    get "/orders/:id" => "orders#show"
+    get "/orders/:id" => "orders#show", as: 'order_detail'
 
     resources :addresses, only:[:index, :new, :edit, :create, :update, :destroy]
 
