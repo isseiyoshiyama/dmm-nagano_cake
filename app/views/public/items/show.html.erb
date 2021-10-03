@@ -12,7 +12,7 @@
     <div class="col-md-5">
         <h1><%= @item.name %></h1>
         <p><%= @item.introduction %></p>
-        <h3>¥<%= @item.price*1.1 %></h3><p>(税込)</p>
+        <h3>¥<%= (@item.price*1.1).floor %></h3><p>(税込)</p>
 
          <div>
              <%= form_with model: @cart_item, url:cart_add_path, local:true do |f| %>
