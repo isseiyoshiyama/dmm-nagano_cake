@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   def new
+    #cart_item_check
     @order = Order.new
 
   end
@@ -67,4 +68,13 @@ class Public::OrdersController < ApplicationController
   def order_params
     params.require(:order).permit(:payment_method, :postal_code, :address, :name, :total_fee)
   end
+
+
+  # def cart_item_check
+  #   cart_item = current_customer.cart_items
+  #   unless cart_item.exists?
+  #     redirect_to cart_items_path
+  #   end
+  # end
+
 end

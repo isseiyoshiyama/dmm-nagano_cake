@@ -1,3 +1,8 @@
+<div class="text-center">
+  <%= flash[:error] %>
+</div>
+
+
 <div class="col-md-8 mx-auto mt-4">
     <div class ="row mb-3">
           <h4 class="text-center bg-light">ログイン</h4>
@@ -27,12 +32,12 @@
 
     <%#= render "admins/shared/links" %>
   </div>
-  
-  
+
+
   <div class ="row mb-3">
       <h6 class="text-center bg-light">会員登録がお済みでない方</h6>
   </div>
-  
+
     <p>
         <%= link_to "こちら", new_customer_registration_path %>　から新規登録を行ってください。
     </p>
